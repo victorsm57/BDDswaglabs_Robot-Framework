@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.7 on win32)" generated="20221005 16:27:09.505" rpa="false" schemaversion="3">
+<suite id="s1" name="BDDswaglabs Robot-Framework" source="C:\Users\victo\Robot Framework 🤖\BDDswaglabs_Robot-Framework">
+<suite id="s1-s1" name="Suites" source="C:\Users\victo\Robot Framework 🤖\BDDswaglabs_Robot-Framework\suites">
+<suite id="s1-s1-s1" name="CARRINHO" source="C:\Users\victo\Robot Framework 🤖\BDDswaglabs_Robot-Framework\suites\CARRINHO">
+<suite id="s1-s1-s1-s1" name="carrinho Test" source="C:\Users\victo\Robot Framework 🤖\BDDswaglabs_Robot-Framework\suites\CARRINHO\carrinho_Test.robot">
+<test id="s1-s1-s1-s1-t1" name="Cenário 1: Adicionar um produto no carrinho" line="7">
+<kw name="Acessar o site e logar" library="setup_teardown" type="SETUP">
+<kw name="eu abro o site da swag labs" library="LoginPage">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${GERAL.URL}</arg>
+<arg>${GERAL.NAVEGADOR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221005 16:27:10.391" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
+<status status="PASS" starttime="20221005 16:27:10.389" endtime="20221005 16:27:14.406"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221005 16:27:14.406" endtime="20221005 16:27:14.670"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:10.388" endtime="20221005 16:27:14.670"/>
+</kw>
+<kw name="eu preencho usuário e senha" library="LoginPage">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LoginPage.input_username}</arg>
+<arg>${GERAL.USER_VALIDO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221005 16:27:14.677" level="INFO">Typing text 'standard_user' into text field 'xpath://input[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20221005 16:27:14.672" endtime="20221005 16:27:15.021"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LoginPage.input_password}</arg>
+<arg>${GERAL.SENHA_VALIDA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221005 16:27:15.026" level="INFO">Typing text 'secret_sauce' into text field 'xpath://input[@id="password"]'.</msg>
+<status status="PASS" starttime="20221005 16:27:15.022" endtime="20221005 16:27:15.288"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:14.671" endtime="20221005 16:27:15.289"/>
+</kw>
+<kw name="aperto o botão de login" library="LoginPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LoginPage.input_login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221005 16:27:15.294" level="INFO">Clicking element 'xpath://input[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20221005 16:27:15.293" endtime="20221005 16:27:15.564"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:15.291" endtime="20221005 16:27:15.565"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:10.387" endtime="20221005 16:27:15.566"/>
+</kw>
+<kw name="Given adiciono um produto no carrinho" library="HomePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HomePage.button_addToCart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221005 16:27:15.686" level="INFO">Clicking element 'xpath://button[@id="add-to-cart-sauce-labs-backpack"]'.</msg>
+<status status="PASS" starttime="20221005 16:27:15.616" endtime="20221005 16:27:15.843"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:15.582" endtime="20221005 16:27:15.844"/>
+</kw>
+<kw name="Then o produto é adicionado no carrinho" library="HomePage">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${HomePage.span_CartADDProduct}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20221005 16:27:15.945" level="INFO">Element 'xpath://span[@class="shopping_cart_badge"]' is displayed.</msg>
+<status status="PASS" starttime="20221005 16:27:15.860" endtime="20221005 16:27:15.947"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:15.850" endtime="20221005 16:27:15.948"/>
+</kw>
+<kw name="Fechar navegador" library="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221005 16:27:15.954" endtime="20221005 16:27:18.529"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:15.953" endtime="20221005 16:27:18.531"/>
+</kw>
+<tag>smoke</tag>
+<status status="PASS" starttime="20221005 16:27:10.384" endtime="20221005 16:27:18.531"/>
+</test>
+<test id="s1-s1-s1-s1-t2" name="Cenário 2: Adicionar mais de um produto no carrinho e dar checkout" line="12">
+<kw name="Acessar o site e logar" library="setup_teardown" type="SETUP">
+<kw name="eu abro o site da swag labs" library="LoginPage">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${GERAL.URL}</arg>
+<arg>${GERAL.NAVEGADOR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221005 16:27:18.576" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
+<status status="PASS" starttime="20221005 16:27:18.566" endtime="20221005 16:27:22.538"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221005 16:27:22.539" endtime="20221005 16:27:22.877"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:18.559" endtime="20221005 16:27:22.878"/>
+</kw>
+<kw name="eu preencho usuário e senha" library="LoginPage">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LoginPage.input_username}</arg>
+<arg>${GERAL.USER_VALIDO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221005 16:27:22.881" level="INFO">Typing text 'standard_user' into text field 'xpath://input[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20221005 16:27:22.879" endtime="20221005 16:27:23.332"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LoginPage.input_password}</arg>
+<arg>${GERAL.SENHA_VALIDA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221005 16:27:23.338" level="INFO">Typing text 'secret_sauce' into text field 'xpath://input[@id="password"]'.</msg>
+<status status="PASS" starttime="20221005 16:27:23.332" endtime="20221005 16:27:23.545"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:22.878" endtime="20221005 16:27:23.545"/>
+</kw>
+<kw name="aperto o botão de login" library="LoginPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LoginPage.input_login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221005 16:27:23.548" level="INFO">Clicking element 'xpath://input[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20221005 16:27:23.547" endtime="20221005 16:27:23.942"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:23.546" endtime="20221005 16:27:23.943"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:18.558" endtime="20221005 16:27:23.943"/>
+</kw>
+<kw name="Given adiciono dois produtos no carrinho" library="HomePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HomePage.button_addToCart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221005 16:27:23.954" level="INFO">Clicking element 'xpath://button[@id="add-to-cart-sauce-labs-backpack"]'.</msg>
+<status status="PASS" starttime="20221005 16:27:23.953" endtime="20221005 16:27:24.307"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HomePage.button_addToCart2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221005 16:27:24.309" level="INFO">Clicking element 'xpath://button[@name="add-to-cart-sauce-labs-bike-light"]'.</msg>
+<status status="PASS" starttime="20221005 16:27:24.307" endtime="20221005 16:27:24.429"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:23.944" endtime="20221005 16:27:24.430"/>
+</kw>
+<kw name="When clico no carrinho" library="HomePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HomePage.a_cartLink}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221005 16:27:24.447" level="INFO">Clicking element 'xpath://a[@class="shopping_cart_link"]'.</msg>
+<status status="PASS" starttime="20221005 16:27:24.445" endtime="20221005 16:27:24.608"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:24.439" endtime="20221005 16:27:24.608"/>
+</kw>
+<kw name="And dou checkout" library="HomePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HomePage.button_checkout}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221005 16:27:24.692" level="INFO">Clicking element 'xpath://button[@id="checkout"]'.</msg>
+<status status="PASS" starttime="20221005 16:27:24.690" endtime="20221005 16:27:24.864"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:24.678" endtime="20221005 16:27:24.867"/>
+</kw>
+<kw name="Then a página de checkout é apresentada" library="CheckoutPage">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${CheckoutPage.span_checkoutPage_Message}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20221005 16:27:24.938" level="INFO">Element 'xpath://span[contains(text(), "Checkout: Your Information")]' is displayed.</msg>
+<status status="PASS" starttime="20221005 16:27:24.878" endtime="20221005 16:27:24.940"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:24.873" endtime="20221005 16:27:24.940"/>
+</kw>
+<kw name="Fechar navegador" library="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221005 16:27:24.947" endtime="20221005 16:27:28.755"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:24.946" endtime="20221005 16:27:28.756"/>
+</kw>
+<tag>smoke</tag>
+<status status="PASS" starttime="20221005 16:27:18.549" endtime="20221005 16:27:28.757"/>
+</test>
+<status status="PASS" starttime="20221005 16:27:09.660" endtime="20221005 16:27:28.760"/>
+</suite>
+<status status="PASS" starttime="20221005 16:27:09.633" endtime="20221005 16:27:28.772"/>
+</suite>
+<suite id="s1-s1-s2" name="LOGIN" source="C:\Users\victo\Robot Framework 🤖\BDDswaglabs_Robot-Framework\suites\LOGIN">
+<suite id="s1-s1-s2-s1" name="Login Test" source="C:\Users\victo\Robot Framework 🤖\BDDswaglabs_Robot-Framework\suites\LOGIN\login_test.robot">
+<test id="s1-s1-s2-s1-t1" name="Cenário 1: Fazer login no site da Swag Labs com credenciais válidas" line="6">
+<kw name="Given eu abro o site da swag labs" library="LoginPage">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${GERAL.URL}</arg>
+<arg>${GERAL.NAVEGADOR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221005 16:27:28.888" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
+<status status="PASS" starttime="20221005 16:27:28.884" endtime="20221005 16:27:32.101"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221005 16:27:32.101" endtime="20221005 16:27:32.403"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:28.875" endtime="20221005 16:27:32.403"/>
+</kw>
+<kw name="When eu preencho usuário e senha" library="LoginPage">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LoginPage.input_username}</arg>
+<arg>${GERAL.USER_VALIDO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221005 16:27:32.435" level="INFO">Typing text 'standard_user' into text field 'xpath://input[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20221005 16:27:32.433" endtime="20221005 16:27:32.770"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LoginPage.input_password}</arg>
+<arg>${GERAL.SENHA_VALIDA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221005 16:27:32.772" level="INFO">Typing text 'secret_sauce' into text field 'xpath://input[@id="password"]'.</msg>
+<status status="PASS" starttime="20221005 16:27:32.770" endtime="20221005 16:27:32.952"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:32.418" endtime="20221005 16:27:32.952"/>
+</kw>
+<kw name="And aperto o botão de login" library="LoginPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LoginPage.input_login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221005 16:27:32.971" level="INFO">Clicking element 'xpath://input[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20221005 16:27:32.970" endtime="20221005 16:27:33.322"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:32.963" endtime="20221005 16:27:33.322"/>
+</kw>
+<kw name="Then a página home é apresentada" library="HomePage">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${HomePage.SUCESS_MESSAGE_PROVA}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20221005 16:27:33.512" level="INFO">Element 'xpath://span[contains(text(), "Products")]' is displayed.</msg>
+<status status="PASS" starttime="20221005 16:27:33.466" endtime="20221005 16:27:33.514"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:33.437" endtime="20221005 16:27:33.515"/>
+</kw>
+<kw name="Fechar navegador" library="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221005 16:27:33.523" endtime="20221005 16:27:35.913"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:33.521" endtime="20221005 16:27:35.914"/>
+</kw>
+<tag>smoke</tag>
+<status status="PASS" starttime="20221005 16:27:28.871" endtime="20221005 16:27:35.916"/>
+</test>
+<test id="s1-s1-s2-s1-t2" name="Cenário 2: Impedir usuário inválidado de fazer login" line="13">
+<kw name="Given eu abro o site da swag labs" library="LoginPage">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${GERAL.URL}</arg>
+<arg>${GERAL.NAVEGADOR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221005 16:27:35.958" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
+<status status="PASS" starttime="20221005 16:27:35.953" endtime="20221005 16:27:39.425"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221005 16:27:39.425" endtime="20221005 16:27:39.698"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:35.947" endtime="20221005 16:27:39.699"/>
+</kw>
+<kw name="When preencho usuário e senha inválidos" library="LoginPage">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LoginPage.input_username}</arg>
+<arg>${GERAL.USER_INVALIDO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221005 16:27:39.736" level="INFO">Typing text '12344' into text field 'xpath://input[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20221005 16:27:39.734" endtime="20221005 16:27:40.027"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LoginPage.input_password}</arg>
+<arg>${GERAL.SENHA_INVALIDA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221005 16:27:40.030" level="INFO">Typing text '13445' into text field 'xpath://input[@id="password"]'.</msg>
+<status status="PASS" starttime="20221005 16:27:40.028" endtime="20221005 16:27:40.191"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:39.727" endtime="20221005 16:27:40.192"/>
+</kw>
+<kw name="And aperto o botão de login" library="LoginPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LoginPage.input_login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221005 16:27:40.206" level="INFO">Clicking element 'xpath://input[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20221005 16:27:40.205" endtime="20221005 16:27:40.381"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:40.197" endtime="20221005 16:27:40.382"/>
+</kw>
+<kw name="Then a mensagem de erro de login é apresentada" library="LoginPage">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${LoginPage.ERROR_MESSAGE_PROVA}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20221005 16:27:40.451" level="INFO">Element 'xpath://h3[@data-test="error"]' is displayed.</msg>
+<status status="PASS" starttime="20221005 16:27:40.395" endtime="20221005 16:27:40.457"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:40.390" endtime="20221005 16:27:40.457"/>
+</kw>
+<kw name="Fechar navegador" library="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221005 16:27:40.464" endtime="20221005 16:27:42.993"/>
+</kw>
+<status status="PASS" starttime="20221005 16:27:40.463" endtime="20221005 16:27:42.993"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" starttime="20221005 16:27:35.936" endtime="20221005 16:27:42.994"/>
+</test>
+<status status="PASS" starttime="20221005 16:27:28.807" endtime="20221005 16:27:43.014"/>
+</suite>
+<status status="PASS" starttime="20221005 16:27:28.793" endtime="20221005 16:27:43.030"/>
+</suite>
+<status status="PASS" starttime="20221005 16:27:09.606" endtime="20221005 16:27:43.045"/>
+</suite>
+<status status="PASS" starttime="20221005 16:27:09.516" endtime="20221005 16:27:43.081"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">regression</stat>
+<stat pass="3" fail="0" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="BDDswaglabs Robot-Framework">BDDswaglabs Robot-Framework</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1" name="Suites">BDDswaglabs Robot-Framework.Suites</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s1" name="CARRINHO">BDDswaglabs Robot-Framework.Suites.CARRINHO</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s1-s1" name="carrinho Test">BDDswaglabs Robot-Framework.Suites.CARRINHO.carrinho Test</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s2" name="LOGIN">BDDswaglabs Robot-Framework.Suites.LOGIN</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s2-s1" name="Login Test">BDDswaglabs Robot-Framework.Suites.LOGIN.Login Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
